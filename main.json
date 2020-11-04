@@ -1,0 +1,11 @@
+[
+  {
+    "title": "abc",
+    "money": 31.23,
+    "user": [
+      "azj",
+      "wjl"
+    ],
+    "admin": "cql"
+  }
+]
