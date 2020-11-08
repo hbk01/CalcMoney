@@ -1,17 +1,10 @@
-# 语法：
-#   0. 在开头使用 define 语句定义账单涉及的人物（必须）
-#   1. define 语句以 “# define” 开头，#号和 define 之间一定要有空格
-#   2. 第一个 define 为默认的 admin（买单者）
-#   3. '谁要买' 中 full 指所有人
-#   4. 什么东西 多少钱 谁要买[-谁买单]
+#define a Alone
+#define b Blank
+#define c Cat
+#define d Dill
 
-# define a Alone
-# define b Blank
-# define c Cat
-# define d Dill
-
-Item1 31.24 full-z
-Item2 12.43 a,b-c
+Item1 8 full-d
+Item2 8 a,b-c
 Item3 8 full
-Item4 10 a,b,c
-Item5 13.2 z,c-a
+Item4 10 b
+Item5 12 b,c-a
