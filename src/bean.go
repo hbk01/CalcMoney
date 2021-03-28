@@ -53,6 +53,11 @@ func (u User) UpdateAll(i Item) {
 		AutoAdd(u.moneyPush, i.admin.name, sMoney)
 		// 更新买单者的收钱数据库
 		AutoAdd(i.admin.moneyPull, u.name, sMoney)
+	} else {
+		// 更新当前用户的购物清单数据库
+		AutoAdd(u.money, i.title, sMoney)
+		// 更新当前用户的给钱数据库
+		AutoAdd(u.moneyPush, i.admin.name, sMoney)
 	}
 }
 
