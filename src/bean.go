@@ -24,6 +24,15 @@ type Item struct {
 	admin User
 }
 
+// implement IObserver
+type User struct {
+	name      string
+	code      string
+	moneyPull map[string]string
+	moneyPush map[string]string
+	money     map[string]string
+}
+
 func (i Item) AddObs(obs IObserver) {
 	observer[i.title] = append(observer[i.title], obs)
 }
@@ -32,15 +41,6 @@ func (i Item) NotifyAll() {
 	for _, o := range observer[i.title] {
 		o.UpdateAll(i)
 	}
-}
-
-// implement IObserver
-type User struct {
-	name      string
-	code      string
-	moneyPull map[string]string
-	moneyPush map[string]string
-	money     map[string]string
 }
 
 func (u User) UpdateAll(i Item) {

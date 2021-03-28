@@ -1,9 +1,0 @@
-#define a 艾志坚
-#define c 陈琦亮
-#define w 王金龙
-#define z 钟凡
-
-大蒜 2.9 a,c,w,z
-生姜 6.7 a,c,w,z
-朝天椒 0.9 z
-袋子 1 a,c,w,z
