@@ -75,9 +75,7 @@ func parseItem(text string) {
 func parseUser(text string) []User {
 	var u []User
 	if text == "full" {
-		for _, v := range user {
-			u = append(u, v)
-		}
+		u = append(u, user...)
 	} else if strings.Contains(text, ",") {
 		split := strings.Split(text, ",")
 		for _, s := range split {

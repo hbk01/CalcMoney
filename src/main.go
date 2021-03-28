@@ -1,27 +1,29 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"io/ioutil"
 	"os"
 	"strings"
 )
 
-var Debug bool = false
+var Debug = flag.Bool("debug", false, "开启输出详细信息")
+var Path = flag.String("file", "./src.txt", "要解析的文件")
+var Help = flag.Bool("help", false, "输出此帮助")
 
 func main() {
-	var path string
-	if os.Args[1] == "-d" || os.Args[1] == "--debug" {
-		Debug = true
-		path = os.Args[2]
-	} else {
-		Debug = false
-		path = os.Args[1]
+	flag.Parse()
+
+	if *Help {
+		flag.Usage()
+		os.Exit(0)
 	}
-	text := readFile(path)
+
+	text := readFile(*Path)
 	parse(text)
 
-	if Debug {
+	if *Debug {
 		fmt.Println()
 		fmt.Println("Parse Results: ")
 		for _, i := range item {
@@ -46,7 +48,7 @@ func main() {
 		totalPull := "0.0"
 		totalPush := "0.0"
 		fmt.Println(u.name)
-		if Debug {
+		if *Debug {
 			for k, v := range u.money {
 				fmt.Printf("\t%6s --- %s\n", v, k)
 			}
@@ -75,7 +77,7 @@ func readFile(path string) []string {
 }
 
 func Log(v interface{}) {
-	if Debug {
+	if *Debug {
 		fmt.Println(v)
 	}
 }
