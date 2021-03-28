@@ -4,16 +4,8 @@
 
 # 使用
 
-```shell script
-usage:
-	cm [-d|--debug] file
-		-d, --deubg: 输出更详细的信息
-		file: 账单（文本格式）
-
-example:
-    cm -d src.txt
-    cm --debug src.txt
-    cm src.txt
+```shell
+cm --help
 ```
 
 # 账单的格式
